@@ -1,0 +1,114 @@
+2017-11-19 16:28:26 [scrapy.utils.log] INFO: Scrapy 1.4.0 started (bot: Sun)
+2017-11-19 16:28:26 [scrapy.utils.log] INFO: Overridden settings: {'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'SPIDER_LOADER_WARN_ONLY': True, 'LOG_FILE': 'DongguanSpider.log', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['Sun.spiders'], 'NEWSPIDER_MODULE': 'Sun.spiders', 'BOT_NAME': 'Sun', 'LOG_LEVEL': 'INFO'}
+2017-11-19 16:28:26 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.corestats.CoreStats']
+2017-11-19 16:28:26 [dongguan] INFO: Reading start URLs from redis key 'sun0769' (batch size: 16, encoding: utf-8
+2017-11-19 16:28:26 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-11-19 16:28:26 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-11-19 16:28:26 [scrapy.middleware] INFO: Enabled item pipelines:
+['Sun.pipelines.DongguanPipeline', 'scrapy_redis.pipelines.RedisPipeline']
+2017-11-19 16:28:26 [scrapy.core.engine] INFO: Spider opened
+2017-11-19 16:28:27 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-11-19 16:28:50 [scrapy.core.scraper] ERROR: Spider error processing <GET http://wz.sun0769.com/html/question/201711/350897.shtml> (referer: http://wz.sun0769.com/index.php/question/questionType?type=4&page=810)
+Traceback (most recent call last):
+  File "c:\users\nio_d\appdata\local\programs\python\python35\lib\site-packages\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\users\nio_d\appdata\local\programs\python\python35\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\users\nio_d\appdata\local\programs\python\python35\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\users\nio_d\appdata\local\programs\python\python35\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\users\nio_d\appdata\local\programs\python\python35\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\users\nio_d\appdata\local\programs\python\python35\lib\site-packages\scrapy\spiders\crawl.py", line 78, in _parse_response
+    for requests_or_item in iterate_spider_output(cb_res):
+  File "C:\Users\Nio_D\Desktop\spider\day9\Sun\Sun\spiders\dongguan.py", line 24, in parse_item
+    item['number'] = response.xpath('//div[@class="pagecenter p3"]/div/div/div/strong/text()').extract()[0].split(':')[-1].replace('\xa0', '')
+IndexError: list index out of range
+2017-11-19 16:29:27 [scrapy.extensions.logstats] INFO: Crawled 368 pages (at 368 pages/min), scraped 277 items (at 277 items/min)
+2017-11-19 16:29:58 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2017-11-19 16:29:58 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2017-11-19 16:30:09 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2017-11-19 16:36:23 [scrapy.utils.log] INFO: Scrapy 1.4.0 started (bot: Sun)
+2017-11-19 16:36:23 [scrapy.utils.log] INFO: Overridden settings: {'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['Sun.spiders'], 'BOT_NAME': 'Sun', 'LOG_LEVEL': 'INFO', 'ROBOTSTXT_OBEY': True, 'NEWSPIDER_MODULE': 'Sun.spiders', 'SPIDER_LOADER_WARN_ONLY': True, 'LOG_FILE': 'DongguanSpider.log'}
+2017-11-19 16:36:23 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logstats.LogStats']
+2017-11-19 16:36:23 [dongguan] INFO: Reading start URLs from redis key 'sun0769' (batch size: 16, encoding: utf-8
+2017-11-19 16:36:23 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-11-19 16:36:23 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-11-19 16:36:23 [scrapy.middleware] INFO: Enabled item pipelines:
+['Sun.pipelines.DongguanPipeline', 'scrapy_redis.pipelines.RedisPipeline']
+2017-11-19 16:36:23 [scrapy.core.engine] INFO: Spider opened
+2017-11-19 16:36:23 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-11-19 16:37:23 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-11-19 16:40:46 [scrapy.extensions.logstats] INFO: Crawled 9 pages (at 9 pages/min), scraped 0 items (at 0 items/min)
+2017-11-19 16:46:29 [scrapy.extensions.logstats] INFO: Crawled 57 pages (at 48 pages/min), scraped 35 items (at 35 items/min)
+2017-11-19 16:46:31 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2017-11-19 16:46:31 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2017-11-19 16:46:33 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2017-11-19 16:46:33 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in http://wz.sun0769.com/index.php/question/questionType?type=4&page=330. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2017-11-19 16:46:33 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in http://wz.sun0769.com/html/question/201711/352374.shtml. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2017-11-19 16:46:33 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 5,
+ 'downloader/exception_type_count/twisted.web._newclient.ResponseFailed': 2,
+ 'downloader/exception_type_count/twisted.web._newclient.ResponseNeverReceived': 3,
+ 'downloader/request_bytes': 36213,
+ 'downloader/request_count': 76,
+ 'downloader/request_method_count/GET': 76,
+ 'downloader/response_bytes': 1026196,
+ 'downloader/response_count': 71,
+ 'downloader/response_status_count/200': 70,
+ 'downloader/response_status_count/302': 1,
+ 'finish_reason': 'shutdown',
+ 'finish_time': datetime.datetime(2017, 11, 19, 8, 46, 33, 692444),
+ 'item_scraped_count': 47,
+ 'log_count/INFO': 13,
+ 'log_count/WARNING': 2,
+ 'request_depth_max': 5,
+ 'response_received_count': 70,
+ 'retry/count': 5,
+ 'retry/reason_count/twisted.web._newclient.ResponseFailed': 2,
+ 'retry/reason_count/twisted.web._newclient.ResponseNeverReceived': 3,
+ 'scheduler/dequeued/redis': 74,
+ 'scheduler/enqueued/redis': 427,
+ 'start_time': datetime.datetime(2017, 11, 19, 8, 36, 23, 218350)}
+2017-11-19 16:46:33 [scrapy.core.engine] INFO: Spider closed (shutdown)
